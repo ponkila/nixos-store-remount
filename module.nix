@@ -56,6 +56,7 @@ in
       # Mount overlay and bind /tmp
       script = ''
         /run/wrappers/bin/mount -t overlay overlay -o lowerdir=/nix/.ro-store:/nix/store,upperdir=/nix/.rw-store/store,workdir=/nix/.rw-store/work /nix/store
+        mkdir -p /tmp
         /run/wrappers/bin/mount --bind /nix/.rw-store/tmp /tmp
       '';
 
